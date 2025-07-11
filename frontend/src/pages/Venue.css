@@ -1,0 +1,191 @@
+/* Base Container */
+.venue-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #111111;
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+  color: #f0e9dc;
+}
+
+/* Title */
+.venue-container h2 {
+  text-align: center;
+  color: #f5c518;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+/* Form */
+.venue-form {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Read-only Info Fields */
+.readonly-field {
+  background: #181818;
+  border: 1px solid #333;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #d4af37;
+}
+
+/* Labels */
+.form-group label,
+.readonly-field label {
+  font-weight: 600;
+  color: #f5c518;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Inputs & Textarea */
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #202020;
+  color: #f0e9dc;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #d4af37;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  background-color: #d4af37;
+  color: #111;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #f5c518;
+  transform: translateY(-2px);
+}
+
+/* Error Message */
+.error {
+  color: #ff6b6b;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Venue Results Section */
+.venue-results {
+  margin-top: 3rem;
+}
+
+.venue-results h3 {
+  color: #f5c518;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid Layout */
+.venue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Individual Venue Card */
+.venue-card {
+  background: linear-gradient(145deg, #1c1c1c, #111111);
+  border: 1px solid #333;
+  border-left: 4px solid #d4af37;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(245, 197, 24, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.venue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px rgba(245, 197, 24, 0.12);
+}
+
+.venue-card h4 {
+  margin-bottom: 0.6rem;
+  color: #f5c518;
+  font-size: 1.3rem;
+  letter-spacing: 0.3px;
+}
+
+.venue-card p {
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+  color: #dddddd;
+}
+
+/* ➕➖ Add/Remove Buttons */
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  gap: 12px;
+}
+
+.add-btn,
+.remove-btn {
+  flex: 1;
+  padding: 0.6rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  color: #111;
+}
+
+.add-btn {
+  background-color: #28a745;
+}
+
+.add-btn:hover {
+  background-color: #2ecc71;
+  transform: scale(1.03);
+}
+
+.remove-btn {
+  background-color: #dc3545;
+}
+
+.remove-btn:hover {
+  background-color: #e74c3c;
+  transform: scale(1.03);
+}
+
+.add-btn:disabled,
+.remove-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

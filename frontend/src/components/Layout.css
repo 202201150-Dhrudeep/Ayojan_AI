@@ -1,0 +1,68 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0d0d0d;
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  overflow: hidden; /* Prevent entire page overflow */
+}
+
+.dashboard-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* ✅ This is the missing line */
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0; /* ✅ Prevents sidebar from shrinking */
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  padding: 2rem 1rem;
+  border-right: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #f0e6d2;
+  font-size: 0.95rem;
+  position: sticky;
+top: 0;
+
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  padding-left: 1rem; /* reduce left padding */
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 0;
+}
+/* 
+  outline: 1px solid red;
+/* } */ 
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar-item.active {
+  background-color: #fef3c7; /* soft yellow or your brand color */
+  color: #b45309;            /* warm bold for active text */
+  font-weight: 600;
+  border-left: 4px solid #facc15;
+}
+

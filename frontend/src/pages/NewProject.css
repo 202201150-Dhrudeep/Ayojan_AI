@@ -1,0 +1,135 @@
+/* NewProject.css */
+
+.new-project {
+  padding: 1.5rem 2rem;
+  width: 100%;
+}
+
+.new-project h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #fceabb;
+  margin-bottom: 2rem;
+}
+
+.project-form {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 2.5rem 3rem;
+  border-radius: 18px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.08);
+}
+
+.project-form label {
+  font-weight: 600;
+  color: #f0e6d2;
+  margin-bottom: 0.2rem;
+}
+
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.project-form input:focus,
+.project-form textarea:focus {
+  outline: none;
+  border-color: #fceabb;
+}
+
+.date-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+input[type="date"] {
+  min-width: 0;
+}
+
+
+.date-row > div {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+.date-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+} */
+
+.project-form button {
+  align-self: center;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #fceabb, #f8b500);
+  border: none;
+  border-radius: 12px;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.project-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+}
+.loading-message {
+  margin-top: 2rem;
+  color: #fceabb;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.submitted-preview {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.submitted-preview h3 {
+  color: #fceabb;
+  margin-bottom: 1rem;
+}
+
+.submitted-preview ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.submitted-preview li {
+  margin-bottom: 0.5rem;
+}
+.plan-markdown h2 {
+  color: #fceabb;
+  margin-top: 1.5rem;
+}
+
+.plan-markdown p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #eee;
+}
+
