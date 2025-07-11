@@ -1,66 +1,33 @@
-# PLANit Project
+# 🧠 Ayojan AI – Smart Event Planning Platform
 
-## Overview
-PLANit is a full-stack application built using the MERN (MongoDB, Express, React, Node.js) stack. This project aims to provide a platform for event planning, allowing users to manage and organize their events efficiently.
+**Ayojan AI** is a smart event planning web application that helps users discover the best venues for their events using AI. Built with a modern tech stack and an intuitive interface, it simplifies venue selection and lays the foundation for full event planning capabilities.
 
-## Project Structure
-The project is divided into two main parts: the backend and the frontend. 
+---
 
-### Backend
-- **src/app.js**: Entry point of the backend application. Initializes the Express app, sets up middleware, and connects to the database.
-- **src/routes/index.js**: Sets up the API routes for the backend application.
-- **src/controllers/index.js**: Contains controller functions that handle the logic for the routes.
-- **package.json**: Configuration file for the backend, listing dependencies and scripts.
-- **README.md**: Documentation for the backend part of the project.
+## ✨ Key Functionalities
 
-### Frontend
-- **public/index.html**: Main HTML file for the frontend application.
-- **src/App.js**: Main component of the React application.
-- **src/index.js**: Entry point of the React application.
-- **src/components/HeroSection.js**: Displays a hero section with a photo.
-- **src/assets/hero-photo.jpg**: Image file used in the hero section.
-- **package.json**: Configuration file for the frontend, listing dependencies and scripts.
-- **README.md**: Documentation for the frontend part of the project.
+- 🔍 **Venue Recommendation with AI**  
+  Users can ask questions like _"Suggest an open-air venue in Delhi"_ and get intelligent suggestions using language models and vector similarity.
 
-## Getting Started
-To get started with PLANit, follow these steps:
+- 📁 **CSV Upload for Venues**  
+  Admins can upload a CSV file containing venue details, which are then processed and stored for future queries.
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+- 💬 **Interactive Chat Interface**  
+  A user-friendly chat UI allows natural language interaction to find relevant venues.
 
-2. Navigate to the backend directory and install dependencies:
-   ```
-   cd backend
-   npm install
-   ```
+- 🧠 **AI-Powered Search**  
+  Venue descriptions are embedded and stored in a vector database (FAISS) for smart retrieval based on user queries.
 
-3. Navigate to the frontend directory and install dependencies:
-   ```
-   cd ../frontend
-   npm install
-   ```
+- 🔐 **Admin Panel**  
+  Allows uploading and managing venue data with an easy-to-use dashboard.
 
-4. Start the backend server:
-   ```
-   cd backend
-   npm start
-   ```
+---
 
-5. Start the frontend application:
-   ```
-   cd ../frontend
-   npm start
-   ```
+## 🛠️ Tech Stack
 
-## Features
-- User-friendly interface for event planning.
-- Responsive design for various devices.
-- Integration with a backend API for data management.
+- **Frontend:** React, Vite, Tailwind CSS, Framer Motion, Shadcn/UI
+- **Backend:** Node.js, Express, LangChain, FAISS, CSV Parser
+- **AI/NLP:** Hugging Face Transformers or Gemini API (LLM), LangChain for RAG
+- **Other Tools:** Axios, dotenv, Multer
 
-## Contributing
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+---
