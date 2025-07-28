@@ -8,6 +8,7 @@ from dotenv import load_dotenv, find_dotenv
 from pathlib import Path
 
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -30,11 +31,11 @@ DB_FAISS_PATH = (BASE_DIR / "vectorstore/db_faiss").resolve()
 # print(DB_FAISS_PATH)
 # Step 3: Load LLM
 def load_llm():
-    return ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
-        temperature=0.7,
-        google_api_key=GOOGLE_API_KEY,
-        convert_system_message_to_human=True
+    return ChatOpenAI(
+        base_url="https://api.groq.com/openai/v1",
+        api_key=os.getenv("GROQ_API_KEY"),
+        model="llama3-8b-8192",  # or llama3-8b-8192 / gemma-7b-it
+        temperature=0.7
     )
 
 # Step 4: Custom prompt
@@ -59,7 +60,7 @@ Instructions:
     * For "details", provide a concise summary of any relevant 'Extra Info' or general details available in the context for that venue, or "N/A" if nothing suitable.
 4.  **Output Format:** Your response MUST be a valid JSON array of objects. Do not include any additional text, explanations, or conversational phrases outside the JSON.
     * If the relevance check (Instruction 1) leads to "I don't know.", return *only* that phrase, not JSON.
-
+remember:  just answer in json format.  dont even write that here is the reponse or anything just handover the json format without square brackets even.
 Example JSON Format:
 ```json
 [
