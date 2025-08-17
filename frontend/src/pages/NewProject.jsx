@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'; // to navigate after project cre
 
 const NewProject = () => {
   const navigate = useNavigate();
-  const API_URL = process.env.REACT_APP_API_URL ||import.meta.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.REACT_APP_API_URL ||import.meta.env.VITE_API_URL || 'http://localhost:5000';
   const [title, setTitle] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
