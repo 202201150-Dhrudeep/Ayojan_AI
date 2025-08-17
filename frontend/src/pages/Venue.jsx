@@ -5,7 +5,7 @@ import './Venue.css';
 
 const Venue = () => {
   const { projectId } = useParams();
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.REACT_APP_API_URL ||import.meta.env.REACT_APP_API_URL || 'http://localhost:5000';
   const [project, setProject] = useState(null);
   const [guestCount, setGuestCount] = useState(100);
   const [venueBudget, setVenueBudget] = useState(200000);
