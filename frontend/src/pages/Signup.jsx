@@ -20,7 +20,9 @@ const Signup = () => {
         name,
         email,
         password
-      });
+      },{
+  withCredentials: true
+});
 
       // Save token (improve later for production)
       const { token, user } = res.data;
