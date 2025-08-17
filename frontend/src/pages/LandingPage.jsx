@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import './LandingPage.css'; // Assuming you have a CSS file for styling
 function LandingPage() {
   const navigate = useNavigate();
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.VITE_API_URL || 'http://localhost:5000';
+  console.log("VITE_API_URL ->", process.env.VITE_API_URL);
+
   return (
     <div>
       <header className="header">

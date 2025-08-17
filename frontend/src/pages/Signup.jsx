@@ -7,7 +7,7 @@ import './signup.css';
 
 const Signup = () => {
   const navigate = useNavigate();
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = process.env.VITE_API_URL || 'http://localhost:5000';
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
