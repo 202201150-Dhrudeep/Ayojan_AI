@@ -15,14 +15,15 @@ exports.signup = async (req, res) => {
     const newUser = await User.create({ name, email, password: hashedPassword });
 
     const token = jwt.sign({ id: newUser._id }, JWT_SECRET);
-    res
-      .status(201)
-      .cookie("token", token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: process.env.NODE_ENV === "production" ? "Strict" : "Lax",
-        maxAge: 24 * 60 * 60 * 1000, // 1 day
-      })
+    // res
+      // .status(201)
+      // .cookie("token", token, {
+      //   httpOnly: true,
+      //   secure: process.env.NODE_ENV === "production",
+      //   sameSite: process.env.NODE_ENV === "production" ? "Strict" : "Lax",
+      //   maxAge: 24 * 60 * 60 * 1000, // 1 day
+      // })
+      res
   .status(201)
   .json({
     message: 'Signup successful',
@@ -55,8 +56,8 @@ exports.login = async (req, res) => {
       .status(201)
       .cookie("token", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: process.env.NODE_ENV === "production" ? "Strict" : "Lax",
+        secure: true,
+        sameSite: "None",
         maxAge: 24 * 60 * 60 * 1000, // 1 day
       })
   .status(201)
