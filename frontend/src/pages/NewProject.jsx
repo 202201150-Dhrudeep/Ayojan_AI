@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'; // to navigate after project cre
 
 const NewProject = () => {
   const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
   const [title, setTitle] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -36,7 +37,7 @@ const userId=useParams().userId; // assuming you have userId in the URL params
   console.log("Sending to API:", projectData);
 
   try{
-    const res1 = await fetch(`http://localhost:5000/api/projects/create/${userId}`, {
+    const res1 = await fetch(`${API_URL}/api/projects/create/${userId}`, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -45,13 +46,13 @@ const userId=useParams().userId; // assuming you have userId in the URL params
         body: JSON.stringify( projectData),
 });
 console.log("response",res1)
-    // const res1 = await axios.post(`http://localhost:5000/api/projects/create/${userId}`, projectData);
+    // const res1 = await axios.post(`${API_URL}/api/projects/create/${userId}`, projectData);
 const data1 = await res1.json();
 console.log("Saved to DB:", data1);
 
 setProjectId(data1.projectId);
 navigate(`/venue/${data1.projectId}`); // redirect to dashboard after saving
-//     const res=await axios.post(`http://localhost:5000/api/generate-plan`, projectData);
+//     const res=await axios.post(`${API_URL}/api/generate-plan`, projectData);
 //     const data = res.data;
 //     console.log(data)
 // setResponse(data); // set the "API" response

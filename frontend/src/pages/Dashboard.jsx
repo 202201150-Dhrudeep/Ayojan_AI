@@ -11,7 +11,7 @@ import party from '../assets/p.jpeg';
 const Dashboard = () => {
   const navigate = useNavigate();
   const { userId } = useParams();
-
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -19,7 +19,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/projects/fetchprojects/${userId}`,{
+        const res = await axios.get(`${API_URL}/api/projects/fetchprojects/${userId}`,{
   withCredentials: true
 });
 console.log(res.data.projects)

@@ -5,6 +5,7 @@ import './Venue.css';
 
 const Venue = () => {
   const { projectId } = useParams();
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
   const [project, setProject] = useState(null);
   const [guestCount, setGuestCount] = useState(100);
   const [venueBudget, setVenueBudget] = useState(200000);
@@ -16,7 +17,7 @@ const Venue = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        let res = await fetch(`http://localhost:5000/api/projects/${projectId}`,{
+        let res = await fetch(`${API_URL}/api/projects/${projectId}`,{
           method: "POST",
           credentials: 'include',
           headers: { 
@@ -43,7 +44,7 @@ const Venue = () => {
     // const string = `Hey consider this and you are a very professional event planner details event titled "${project.title}" start date ${project.startDate} end date ${project.endDate} location ${project.location} other details: ${prompt}. Now collaborate with google maps and find 20 wedding venues near ${project.location} around a budget of ₹${venueBudget}. Return as JSON with fields: Name, Google Map Rating, Address, Contact Number, Estimated Rent for a Day, Estimated Cost Per Plate, Description, Latitude, Longitude inside a document array.Make sure trhe latitudes and longitudes are exact .Return me just a json file and no text and most importantly sort them according to the google map ratings`;
     console.log( string);
     try {
-      let res = await fetch("http://localhost:5000/api/python/venue", {
+      let res = await fetch(`${API_URL}/api/python/venue`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
